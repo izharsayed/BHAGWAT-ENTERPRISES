@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #F7F7F5;
+  --color-background-secondary: #EEEEEB;
+  --color-surface: #FFFFFF;
+  --color-text: #202020;
+  --color-charcoal: #262626;
+  --color-muted: #6D6D6D;
+  --color-red: #C83A3A;
+  --color-red-hover: #A92F2F;
+  --color-red-soft: #FAEAEA;
+  --color-border: #DEDEDB;
+  --color-light-grey: #E7E7E4;
+  --color-dark-secondary: #BDBDBD;
+
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-technical: 'Space Grotesk', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography styles */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-technical {
+  font-family: var(--font-technical);
+}
+
+/* Eyebrow style */
+.eyebrow {
+  font-family: var(--font-technical);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.eyebrow-light {
+  font-family: var(--font-technical);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+/* Technical metadata */
+.meta-tech {
+  font-family: var(--font-technical);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Hero H1 */
+.hero-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 7.5vw, 7.2rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  color: var(--color-charcoal);
+}
+
+/* Section H2 */
+.section-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  color: var(--color-charcoal);
+}
+
+/* Section H2 Dark */
+.section-h2-dark {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  color: #FFFFFF;
+}
+
+/* Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-red);
+  color: #FFFFFF;
+  border-radius: 999px;
+  min-height: 52px;
+  padding: 14px 24px;
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(200, 58, 58, 0.24);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+  border-radius: 999px;
+  min-height: 52px;
+  padding: 14px 24px;
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-charcoal);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Secondary Dark Button */
+.btn-secondary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 999px;
+  min-height: 52px;
+  padding: 14px 24px;
+  font-family: var(--font-technical);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-secondary-dark:hover {
+  background-color: #FFFFFF;
+  color: var(--color-charcoal);
+  transform: translateY(-2px);
+}
+
+/* Accessible focus outlines */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+}
+
+/* Floating card animation */
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-card-float {
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.animate-card-float:hover {
+  animation-play-state: paused;
+}
+
+/* Ambient Floating Animations for About Cards */
+@keyframes cardFloatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes cardFloatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: cardFloatSlow 6.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: cardFloatReverse 5.5s ease-in-out infinite;
+}
+
+.animate-badge-float {
+  animation: badgeFloat 4.8s ease-in-out infinite;
+}
+
+.animate-float-slow:hover,
+.animate-float-reverse:hover,
+.animate-badge-float:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-card-float,
+  .animate-float-slow,
+  .animate-float-reverse,
+  .animate-badge-float {
+    animation: none !important;
+  }
+}
