@@ -16,15 +16,6 @@ export interface ProjectItem {
   image: CompanyImage;
 }
 
-export interface EquipmentCategory {
-  id: string;
-  number: string;
-  title: string;
-  context: string;
-  description: string;
-  image: CompanyImage;
-}
-
 export interface IndustryItem {
   id: string;
   number: string;
@@ -34,18 +25,6 @@ export interface IndustryItem {
   image: CompanyImage;
   capabilities?: string[];
   clients?: string;
-}
-
-export interface CapabilityItem {
-  number: string;
-  title: string;
-  description: string;
-}
-
-export interface ProcessStage {
-  step: string;
-  name: string;
-  description: string;
 }
 
 export const COMPANY_INFO = {
@@ -116,54 +95,6 @@ export const IMAGES: Record<string, CompanyImage> = {
     source: "company",
     status: "authentic",
   },
-  verticalTank: {
-    id: "equip-vertical-tank",
-    url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80",
-    alt: "Industrial vertical storage tanks in process yard",
-    category: "Storage tanks",
-    source: "stock",
-    status: "replaceable",
-  },
-  ssTank: {
-    id: "equip-ss-tank",
-    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80",
-    alt: "Polished stainless steel process storage vessels",
-    category: "Storage tanks",
-    source: "stock",
-    status: "replaceable",
-  },
-  acidTank: {
-    id: "equip-acid-tank",
-    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=900&q=80",
-    alt: "Heavy duty lined chemical storage tanks",
-    category: "Storage tanks",
-    source: "stock",
-    status: "replaceable",
-  },
-  leakProofTank: {
-    id: "equip-leakproof-tank",
-    url: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=900&q=80",
-    alt: "Engineered leak-proof pressure storage systems",
-    category: "Storage tanks",
-    source: "stock",
-    status: "replaceable",
-  },
-  fabricatedEquip: {
-    id: "equip-custom-fab",
-    url: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80",
-    alt: "Custom fabricated heavy industrial machinery and vessels",
-    category: "Fabrication workshop",
-    source: "stock",
-    status: "replaceable",
-  },
-  plateRolling: {
-    id: "equip-plate-rolling",
-    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80",
-    alt: "Heavy mechanical plate rolling machine forming cylindrical shells",
-    category: "Plate rolling equipment",
-    source: "stock",
-    status: "replaceable",
-  },
   indStarch: {
     id: "ind-starch",
     url: "/images/industries/ind_01_starch.jpeg",
@@ -205,162 +136,6 @@ export const IMAGES: Record<string, CompanyImage> = {
     status: "authentic",
   },
 };
-
-export const QUICK_CAPABILITIES = [
-  {
-    number: "01",
-    title: "ENGINEERING",
-    description: "Practical engineering input for industrial project requirements.",
-  },
-  {
-    number: "02",
-    title: "FABRICATION",
-    description: "Industrial equipment and structural fabrication support.",
-  },
-  {
-    number: "03",
-    title: "EQUIPMENT ERECTION",
-    description: "Coordinated placement and erection of plant equipment.",
-  },
-  {
-    number: "04",
-    title: "TURNKEY PROJECTS",
-    description: "Integrated support from design through start-up services.",
-  },
-];
-
-export const CAPABILITIES_LIST: CapabilityItem[] = [
-  {
-    number: "01",
-    title: "ENGINEERING",
-    description: "Multi-discipline engineering for process-oriented industrial projects.",
-  },
-  {
-    number: "02",
-    title: "DESIGN",
-    description: "Design services shaped around equipment, plant and execution needs.",
-  },
-  {
-    number: "03",
-    title: "FABRICATION",
-    description: "Fabrication of industrial equipment, vessels and structural work.",
-  },
-  {
-    number: "04",
-    title: "EQUIPMENT ERECTION",
-    description: "On-site erection support for industrial equipment and systems.",
-  },
-  {
-    number: "05",
-    title: "PROCUREMENT",
-    description: "Procurement coordination that connects design intent to execution.",
-  },
-  {
-    number: "06",
-    title: "FACILITY MANAGEMENT",
-    description: "Practical support for facilities and operating environments.",
-  },
-  {
-    number: "07",
-    title: "START-UP SERVICES",
-    description: "Support through the transition from installation to start-up.",
-  },
-  {
-    number: "08",
-    title: "TURNKEY PROJECTS",
-    description: "An integrated route from concept and procurement to completion.",
-  },
-];
-
-export const PROCESS_TIMELINE: ProcessStage[] = [
-  {
-    step: "01",
-    name: "ENGINEERING",
-    description: "Technical review, discipline coordination, and engineering calculations.",
-  },
-  {
-    step: "02",
-    name: "DESIGN",
-    description: "Equipment blueprints, process layout detailing, and fabrication drawings.",
-  },
-  {
-    step: "03",
-    name: "PROCUREMENT",
-    description: "Material sourcing, certified metallurgical supply, and quality inspection.",
-  },
-  {
-    step: "04",
-    name: "FABRICATION",
-    description: "Heavy plate rolling, welding, vessel formation, and structural fabrication.",
-  },
-  {
-    step: "05",
-    name: "ERECTION",
-    description: "Rigging, on-site positioning, alignment, and mechanical installation.",
-  },
-  {
-    step: "06",
-    name: "START-UP",
-    description: "Pressure testing, dry runs, loop testing, and commissioning support.",
-  },
-  {
-    step: "07",
-    name: "HANDOVER",
-    description: "Client sign-off, documentation packet, and operational enablement.",
-  },
-];
-
-export const ENGINEERED_EQUIPMENT: EquipmentCategory[] = [
-  {
-    id: "vertical-storage-tanks",
-    number: "01",
-    title: "INDUSTRIAL VERTICAL STORAGE TANKS",
-    context: "Process storage",
-    description: "Engineered vertical cylindrical storage tanks built for atmospheric and pressurized industrial liquid containment.",
-    image: IMAGES.verticalTank,
-  },
-  {
-    id: "stainless-steel-storage-tanks",
-    number: "02",
-    title: "STAINLESS STEEL STORAGE TANKS",
-    context: "Food & process industries",
-    description: "Sanitary grade SS304/SS316 process storage tanks adhering to strict food and beverage cleanliness standards.",
-    image: IMAGES.ssTank,
-  },
-  {
-    id: "acid-storage-tanks",
-    number: "03",
-    title: "ACID STORAGE TANKS",
-    context: "Industrial process applications",
-    description: "Corrosion-resistant containment vessels engineered for hazardous chemicals and acid process lines.",
-    image: IMAGES.acidTank,
-  },
-  {
-    id: "leak-proof-storage-tanks",
-    number: "04",
-    title: "LEAK-PROOF STORAGE TANKS",
-    context: "Industrial storage requirements",
-    description: "High integrity hermetically sealed storage solutions with certified non-destructive weld testing.",
-    image: IMAGES.leakProofTank,
-  },
-  {
-    id: "fabricated-industrial-equipment",
-    number: "05",
-    title: "FABRICATED INDUSTRIAL EQUIPMENT",
-    context: "Project-specific fabrication",
-    description: "Custom built cyclones, hoppers, heat exchangers, ducts, and structural platforms according to project specifications.",
-    image: IMAGES.fabricatedEquip,
-  },
-  {
-    id: "plate-rolling-equipment",
-    number: "06",
-    title: "PLATE ROLLING EQUIPMENT",
-    context: "Fabrication workshop",
-    description: "Specialized in-house cylindrical and conical plate bending infrastructure supporting heavy wall fabrication.",
-    image: IMAGES.plateRolling,
-  },
-];
-
 export const PROJECTS_LIST: ProjectItem[] = [
   {
     id: "proj-01",
