@@ -27,21 +27,29 @@ export const HeroSection: React.FC = () => {
         ENGINEERING
       </div>
 
-      {/* Background Industrial Tanks Image (Right Side with natural overcast sky) */}
-      <div
-        className="absolute right-0 top-0 bottom-20 w-full sm:w-3/5 lg:w-1/2 xl:w-7/12 pointer-events-none z-0 overflow-hidden hidden sm:block"
-        style={{
-          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 8%, rgba(0,0,0,0.85) 26%, black 42%)',
-          maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.05) 8%, rgba(0,0,0,0.85) 26%, black 42%)',
-        }}
-      >
-        <img
-          src="/images/hero-tanks-v2.jpg"
-          alt="Massive vertical stainless steel industrial storage tanks and process silos"
-          className="w-full h-full object-cover object-right scale-102"
-        />
-        {/* Very subtle edge softening at the bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#F7F7F5] to-transparent opacity-50" />
+      {/* Background Industrial Tanks Image */}
+      <div className="absolute right-0 top-0 bottom-0 sm:bottom-20 w-full sm:w-3/5 lg:w-1/2 xl:w-7/12 pointer-events-none z-0 overflow-hidden">
+        {/* Desktop smooth gradient mask */}
+        <div
+          className="w-full h-full relative"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.9) 35%, black 50%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.9) 35%, black 50%)',
+          }}
+        >
+          <img
+            src="/images/hero-tanks-v2.jpg"
+            alt="Massive vertical stainless steel industrial storage tanks and process silos"
+            className="w-full h-full object-cover object-right opacity-30 sm:opacity-100 scale-102 transition-opacity duration-300"
+          />
+        </div>
+
+        {/* Mobile atmospheric gradient washes for 100% text readability */}
+        <div className="sm:hidden absolute inset-0 bg-gradient-to-r from-[#F7F7F5] via-[#F7F7F5]/80 to-transparent pointer-events-none" />
+        <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-[#F7F7F5] via-transparent to-[#F7F7F5]/50 pointer-events-none" />
+
+        {/* Subtle edge softening at the bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#F7F7F5] to-transparent opacity-60" />
       </div>
 
       {/* Main Content Container */}
