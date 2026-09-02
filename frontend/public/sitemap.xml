@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://bhagwatenterprises.com/</loc>
-    <lastmod>2026-09-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/bhagwat-logo.png</image:loc>
+      <image:title>Bhagwat Enterprises Official Brand Logo</image:title>
+      <image:caption>Bhagwat Enterprises - Leading Industrial Fabrication and Erection Engineering Company</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_01_gokak.jpeg</image:loc>
+      <image:title>M/S. Riddhi Siddhi Gluco Biols Ltd. (Gokak, Karnataka)</image:title>
+      <image:caption>Stainless Steel Starch Storage Silos and Refining Battery Fabrication</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_02_pantnagar.jpeg</image:loc>
+      <image:title>M/S. Riddhi Siddhi Gluco Biols Ltd. (Pantnagar, Uttarakhand)</image:title>
+      <image:caption>Heavy Plant Building Structural Steel Gallery and Machinery Erection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_03_bhuj.jpeg</image:loc>
+      <image:title>M/S. Ashapura Volclay Ltd. (Bhuj, Gujarat)</image:title>
+      <image:caption>Industrial Rotary Calciner Kiln and Cyclone Separator Rigging</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_04_chhindwara.jpeg</image:loc>
+      <image:title>M/S. Siddhi Vinayak Agro Industries Pvt. Ltd. (Chhindwara, MP)</image:title>
+      <image:caption>Heavy Conical Vessel Bottom and Mechanical Agitator Assembly</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_05_malda.jpeg</image:loc>
+      <image:title>M/S. Sarada Starch and Chemicals Pvt. Ltd. (Malda, West Bengal)</image:title>
+      <image:caption>Stainless Steel U-Trough Ribbon Blender and Limpet Jacketed Reaction Vessel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_06_rajahmundry.jpeg</image:loc>
+      <image:title>M/S. Paramesu Biotech Pvt. Ltd. (Rajahmundry, AP)</image:title>
+      <image:caption>Horizontal Pressure Autoclave Tank and Slurry Cyclone Separators</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_07_shiggaon.jpeg</image:loc>
+      <image:title>M/S. Gujrat Ambuja Exports Ltd. (Shiggaon, Karnataka)</image:title>
+      <image:caption>Panoramic Industrial Storage Tank Battery and Continuous Refining Silos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_08_galgalia.jpeg</image:loc>
+      <image:title>M/S. Reegal Resources Ltd. (Galgalia, Bihar)</image:title>
+      <image:caption>Heavy Structural Pipe Rack and Industrial Flare Stack Installation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_09_chalisgaon.jpeg</image:loc>
+      <image:title>M/S. Gujrat Ambuja Exports Ltd. (Chalisgaon, Maharashtra)</image:title>
+      <image:caption>Precision Stainless Steel Pipe Manifolds and Flanged Interconnections</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhagwatenterprises.com/images/projects/proj_13_sanstar.jpeg</image:loc>
+      <image:title>M/S. Sanstar Ltd. (Shirpur, Maharashtra)</image:title>
+      <image:caption>Precision SS Limpet Cooling Coil and Process Reactor Assembly</image:caption>
+    </image:image>
   </url>
 </urlset>

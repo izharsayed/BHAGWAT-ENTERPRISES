@@ -19,7 +19,7 @@ export const App: React.FC = () => {
       <Navbar />
 
       {/* Main Single Page Editorial Content */}
-      <main className="flex-1 w-full overflow-x-hidden">
+      <main id="main-content" className="flex-1 w-full overflow-x-hidden">
         {/* 01. Hero */}
         <HeroSection />
 
