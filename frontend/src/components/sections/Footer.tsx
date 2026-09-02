@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
   return (
     <footer
       data-testid="site-footer"
-      className="bg-[#111111] text-white pt-16 sm:pt-20 pb-28 lg:pb-12 border-t border-white/10 relative overflow-hidden"
+      className="bg-[#111111] text-white pt-16 sm:pt-20 pb-12 sm:pb-16 lg:pb-12 border-t border-white/10 relative overflow-hidden"
     >
       {/* Subtle Ambient Radial Glow */}
       <div
