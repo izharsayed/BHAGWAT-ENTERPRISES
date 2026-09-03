@@ -113,12 +113,12 @@ export const Navbar: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Floating Card Modal (Matching User Reference) */}
+      {/* Mobile Floating Card Modal (Matching Website Light Theme) */}
       <div
         id="mobile-menu-backdrop"
         data-testid="mobile-card-backdrop"
         onClick={() => setMobileMenuOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/65 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 bg-black/45 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         role="dialog"
@@ -129,28 +129,31 @@ export const Navbar: React.FC = () => {
         <div className="p-3.5 sm:p-5 w-full max-w-[440px] mx-auto">
           <div
             onClick={(e) => e.stopPropagation()}
-            className={`w-full rounded-[28px] sm:rounded-[32px] bg-[#141518]/95 backdrop-blur-2xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)] p-4 sm:p-5 text-white transition-all duration-300 ease-out transform ${
+            className={`w-full rounded-[28px] sm:rounded-[32px] bg-white/95 backdrop-blur-2xl border border-[#DEDEDB] shadow-[0_25px_60px_rgba(0,0,0,0.22)] p-4 sm:p-5 text-[#262626] ${
               mobileMenuOpen
-                ? 'opacity-100 translate-y-0 scale-100'
-                : 'opacity-0 -translate-y-4 scale-95'
+                ? 'animate-spring-drop'
+                : 'opacity-0 -translate-y-6 scale-95 transition-all duration-200 ease-in pointer-events-none'
             }`}
           >
             {/* Card Header Row (Close Button) */}
-            <div className="flex items-center justify-end pb-2">
+            <div className="flex items-center justify-between pb-2 border-b border-[#F0F0EE]">
+              <span className="font-technical text-[0.68rem] font-bold text-[#8C8C8C] uppercase tracking-wider pl-1">
+                Navigation
+              </span>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
                 data-testid="mobile-card-close"
                 aria-label="Close navigation menu"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C83A3A] border border-white/15 flex items-center justify-center text-white active:scale-95 transition-all cursor-pointer"
+                className="w-9 h-9 rounded-full bg-[#F2F2F0] hover:bg-[#C83A3A] hover:text-white border border-[#E2E2DF] flex items-center justify-center text-[#262626] active:scale-95 transition-all cursor-pointer shadow-xs"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Navigation List */}
+            {/* Navigation List with Staggered Cascading Animation */}
             <div className="py-2.5 space-y-1">
-              {tubelightNavItems.map((item) => {
+              {tubelightNavItems.map((item, index) => {
                 const isActive = activeHash === item.url;
                 return (
                   <a
@@ -161,16 +164,23 @@ export const Navbar: React.FC = () => {
                       handleNavClick(item.url);
                       setMobileMenuOpen(false);
                     }}
+                    style={
+                      mobileMenuOpen
+                        ? { animationDelay: `${100 + index * 50}ms` }
+                        : undefined
+                    }
                     className={`block w-full px-4 py-3 rounded-2xl font-heading text-base font-bold transition-all text-decoration-none ${
+                      mobileMenuOpen ? 'animate-link-stagger' : ''
+                    } ${
                       isActive
-                        ? 'bg-[#0B1530]/90 border border-blue-500/30 text-white shadow-md'
-                        : 'text-[#E0E0E0] hover:text-white hover:bg-white/[0.06]'
+                        ? 'bg-[#FAEAEA] border border-[#C83A3A]/25 text-[#C83A3A] shadow-xs'
+                        : 'text-[#262626] hover:text-[#C83A3A] hover:bg-[#F7F7F5]'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <span>{item.name}</span>
                       {isActive && (
-                        <span className="w-2 h-2 rounded-full bg-[#C83A3A]" />
+                        <span className="w-2 h-2 rounded-full bg-[#C83A3A] animate-pulse" />
                       )}
                     </div>
                   </a>

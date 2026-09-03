@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { MapPin, ArrowUpRight } from 'lucide-react';
 import { PROJECTS_LIST, CURRENT_PROJECTS, COMPANY_INFO } from '../../data/companyData';
 import { CardStack } from '../ui/card-stack';
 
 export const ProjectsSection: React.FC = () => {
+  const [activeSiteIndex, setActiveSiteIndex] = useState(0);
+  const siteScrollRef = useRef<HTMLDivElement>(null);
+
+  const handleSiteScroll = () => {
+    if (!siteScrollRef.current) return;
+    const { scrollLeft, clientWidth } = siteScrollRef.current;
+    if (clientWidth > 0) {
+      const cardStep = clientWidth * 0.84;
+      const index = Math.round(scrollLeft / cardStep);
+      setActiveSiteIndex(Math.min(Math.max(index, 0), CURRENT_PROJECTS.length - 1));
+    }
+  };
   const stackItems = React.useMemo(() => {
     return PROJECTS_LIST.map((proj) => ({
       ...proj,
@@ -123,11 +135,16 @@ export const ProjectsSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Mobile Swipe Track + Desktop 4-Col Grid */}
+          <div
+            ref={siteScrollRef}
+            onScroll={handleSiteScroll}
+            className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory pb-4 pt-1 -mx-5 px-5 sm:mx-0 sm:px-0 no-scrollbar"
+          >
             {CURRENT_PROJECTS.map((curr) => (
               <div
                 key={curr.id}
-                className="group rounded-[24px] overflow-hidden bg-white border border-[#DEDEDB] shadow-sm hover:shadow-xl hover:border-[#C83A3A]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                className="w-[84vw] max-w-[320px] shrink-0 snap-center sm:w-auto sm:max-w-none sm:shrink group rounded-[24px] overflow-hidden bg-white border border-[#DEDEDB] shadow-sm hover:shadow-xl hover:border-[#C83A3A]/60 hover:-translate-y-1.5 active:scale-[0.98] transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Image Header with Live Pill Badge */}
                 <div className="relative h-44 w-full overflow-hidden bg-[#262626]">
@@ -182,6 +199,36 @@ export const ProjectsSection: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Mobile Swipe Pagination & Status Dots */}
+          <div className="sm:hidden flex items-center justify-between pt-3 px-1">
+            <span className="font-technical text-[0.65rem] font-bold text-[#8C8C8C] uppercase tracking-wider">
+              SWIPE SITES ({activeSiteIndex + 1}/{CURRENT_PROJECTS.length})
+            </span>
+            <div className="flex items-center gap-1.5">
+              {CURRENT_PROJECTS.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  type="button"
+                  onClick={() => {
+                    if (siteScrollRef.current) {
+                      const cardStep = siteScrollRef.current.clientWidth * 0.84;
+                      siteScrollRef.current.scrollTo({
+                        left: dotIdx * cardStep,
+                        behavior: 'smooth',
+                      });
+                    }
+                  }}
+                  aria-label={`View Site ${dotIdx + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeSiteIndex === dotIdx
+                      ? 'w-6 bg-[#C83A3A]'
+                      : 'w-1.5 bg-[#DEDEDB]'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

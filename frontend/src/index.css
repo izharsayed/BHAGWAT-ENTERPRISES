@@ -266,6 +266,83 @@ textarea:focus-visible {
   animation-play-state: paused;
 }
 
+/* Hide scrollbar utility for horizontal swipe tracks */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Elastic Spring Drop for Mobile Navigation Card */
+@keyframes elasticSpringDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-35px) scale(0.92);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.02);
+  }
+  75% {
+    transform: translateY(-4px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animate-spring-drop {
+  animation: elasticSpringDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Staggered Link Fade for Mobile Menu Items */
+@keyframes linkFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-link-stagger {
+  animation: linkFadeIn 0.36s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Preloader Logo Animations */
+@keyframes logoShimmer {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  45%, 100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+.animate-logo-shimmer {
+  animation: logoShimmer 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes logoPulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 4px 16px rgba(200, 58, 58, 0.2));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 8px 30px rgba(200, 58, 58, 0.42));
+    transform: scale(1.025);
+  }
+}
+
+.animate-logo-glow {
+  animation: logoPulseGlow 2.8s ease-in-out infinite;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

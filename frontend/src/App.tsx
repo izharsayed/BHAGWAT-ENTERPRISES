@@ -1,4 +1,5 @@
 import React from 'react';
+import { Preloader } from './components/Preloader';
 import { Navbar } from './components/Navbar';
 import { FloatingActions } from './components/FloatingActions';
 import { HeroSection } from './components/sections/HeroSection';
@@ -15,6 +16,9 @@ import { Footer } from './components/sections/Footer';
 export const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F7F5] text-[#202020] selection:bg-[#C83A3A] selection:text-white">
+      {/* Initial Page Loading Telemetry Screen */}
+      <Preloader />
+
       {/* Fixed Sticky Header Navigation */}
       <Navbar />
 

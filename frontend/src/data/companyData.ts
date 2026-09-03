@@ -340,11 +340,11 @@ export const PROJECTS_LIST: ProjectItem[] = [
     category: "Starch & Derivative Plant",
     image: {
       id: "p9",
-      url: "/images/projects/proj_09_chalisgaon.jpeg",
-      alt: "Precision stainless steel pipe rack and manifold installation at Chalisgaon",
-      category: "Stainless piping",
+      url: "/images/projects/proj_09_chalisgaon.jpeg?v=2",
+      alt: "Cyclone separators, process silo battery and high-altitude ducting installation at Chalisgaon",
+      category: "Process Silos & Cyclones",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -416,7 +416,7 @@ export const CURRENT_PROJECTS = [
     client: "M/S. Gujrat Ambuja Exports Ltd.",
     location: "Chalisgaon, Maharashtra",
     category: "Starch & Derivative Plant Erection",
-    image: "/images/projects/proj_09_chalisgaon.jpeg",
+    image: "/images/projects/proj_09_chalisgaon.jpeg?v=2",
   },
   {
     id: "curr-02",

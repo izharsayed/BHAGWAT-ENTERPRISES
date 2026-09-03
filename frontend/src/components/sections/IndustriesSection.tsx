@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { INDUSTRIES_LIST, COMPANY_INFO } from '../../data/companyData';
 
 export const IndustriesSection: React.FC = () => {
+  const [activeIndustryIndex, setActiveIndustryIndex] = useState(0);
+  const industryScrollRef = useRef<HTMLDivElement>(null);
+
+  const handleIndustryScroll = () => {
+    if (!industryScrollRef.current) return;
+    const { scrollLeft, clientWidth } = industryScrollRef.current;
+    if (clientWidth > 0) {
+      const cardStep = clientWidth * 0.84;
+      const index = Math.round(scrollLeft / cardStep);
+      setActiveIndustryIndex(Math.min(Math.max(index, 0), INDUSTRIES_LIST.length - 1));
+    }
+  };
+
   return (
     <section
       id="industries"
@@ -36,14 +49,18 @@ export const IndustriesSection: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Core Industries Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+        {/* Mobile Swipe Track + Tablet/Desktop Grid */}
+        <div
+          ref={industryScrollRef}
+          onScroll={handleIndustryScroll}
+          className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory pb-4 pt-1 -mx-5 px-5 md:mx-0 md:px-0 no-scrollbar"
+        >
           {INDUSTRIES_LIST.map((ind) => (
             <a
               key={ind.id}
               href="#projects"
               data-testid={`industry-card-${ind.number}`}
-              className="group relative rounded-[28px] overflow-hidden border border-[#DEDEDB] hover:border-[#C83A3A]/60 bg-[#141414] min-h-[490px] flex flex-col justify-between p-6 sm:p-7 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-decoration-none"
+              className="w-[84vw] max-w-[330px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink group relative rounded-[28px] overflow-hidden border border-[#DEDEDB] hover:border-[#C83A3A]/60 bg-[#141414] min-h-[470px] sm:min-h-[490px] flex flex-col justify-between p-6 sm:p-7 shadow-md hover:shadow-2xl hover:-translate-y-2 active:scale-[0.98] transition-all duration-500 text-decoration-none"
             >
               {/* Background Authentic Image (Crystal Clear Top with Soft Fade Bottom) */}
               <img
@@ -107,6 +124,36 @@ export const IndustriesSection: React.FC = () => {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Mobile Swipe Pagination & Status Dots */}
+        <div className="md:hidden flex items-center justify-between pt-3 px-1">
+          <span className="font-technical text-[0.65rem] font-bold text-[#8C8C8C] uppercase tracking-wider">
+            SWIPE SECTORS ({activeIndustryIndex + 1}/{INDUSTRIES_LIST.length})
+          </span>
+          <div className="flex items-center gap-1.5">
+            {INDUSTRIES_LIST.map((_, dotIdx) => (
+              <button
+                key={dotIdx}
+                type="button"
+                onClick={() => {
+                  if (industryScrollRef.current) {
+                    const cardStep = industryScrollRef.current.clientWidth * 0.84;
+                    industryScrollRef.current.scrollTo({
+                      left: dotIdx * cardStep,
+                      behavior: 'smooth',
+                    });
+                  }
+                }}
+                aria-label={`View Sector ${dotIdx + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeIndustryIndex === dotIdx
+                    ? 'w-6 bg-[#C83A3A]'
+                    : 'w-1.5 bg-[#DEDEDB]'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
