@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Home, Building2, Layers, Factory, PhoneCall, Menu, X } from 'lucide-react';
 import { TubelightNavbar, type TubelightNavItem } from './ui/tubelight-navbar';
-import { COMPANY_INFO } from '../data/companyData';
 
 const tubelightNavItems: TubelightNavItem[] = [
   { name: 'Home', url: '#hero', icon: Home, testId: 'nav-link-home' },
@@ -98,18 +97,8 @@ export const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Actions: Call Button + Smooth Hamburger Toggle */}
-          <div className="flex items-center gap-2.5 lg:hidden">
-            <a
-              href={`tel:${COMPANY_INFO.phone}`}
-              data-testid="mobile-quick-call"
-              aria-label={`Call ${COMPANY_INFO.phone}`}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#C83A3A] hover:bg-[#B03333] text-white text-xs font-technical font-bold shadow-md active:scale-95 transition-all text-decoration-none"
-            >
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>Call</span>
-            </a>
-
+          {/* Mobile Actions: Smooth Hamburger Toggle */}
+          <div className="flex items-center lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

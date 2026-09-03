@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Phone, Mail, MapPin, CheckCircle2, ShieldCheck, ChevronRight } from 'lucide-react';
+import { ArrowUp, Phone, Mail, CheckCircle2, ShieldCheck, ChevronRight, Building2, Factory } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/companyData';
 
 export const Footer: React.FC = () => {
@@ -119,16 +119,36 @@ export const Footer: React.FC = () => {
             </div>
             <div className="space-y-4 font-body text-xs sm:text-sm text-[#B0B0B0]">
               <div>
-                <div className="font-technical text-[0.65rem] text-[#7A7A7A] uppercase tracking-wider mb-1">
+                <div className="font-technical text-[0.65rem] text-[#7A7A7A] uppercase tracking-wider mb-1.5">
                   CALL DIRECT
                 </div>
-                <a
-                  href={`tel:${COMPANY_INFO.phone}`}
-                  className="font-heading font-bold text-white hover:text-[#C83A3A] transition-colors inline-flex items-center gap-2"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#C83A3A] shrink-0" />
-                  <span>{COMPANY_INFO.phone}</span>
-                </a>
+                <div className="space-y-1.5">
+                  <a
+                    href={`tel:${COMPANY_INFO.directorPhone}`}
+                    className="font-heading font-bold text-white hover:text-[#C83A3A] transition-colors flex items-center justify-between group/line text-decoration-none"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-3.5 h-3.5 text-[#C83A3A] shrink-0" />
+                      <span>+91 {COMPANY_INFO.directorPhone}</span>
+                    </div>
+                    <span className="font-technical text-[0.55rem] text-[#A8A8A8] bg-white/5 border border-white/10 px-1.5 py-0.5 rounded group-hover/line:border-[#C83A3A] group-hover/line:text-white">
+                      DIRECTOR
+                    </span>
+                  </a>
+
+                  <a
+                    href={`tel:${COMPANY_INFO.gmPhone}`}
+                    className="font-heading font-bold text-white hover:text-[#C83A3A] transition-colors flex items-center justify-between group/line text-decoration-none"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-3.5 h-3.5 text-[#C83A3A] shrink-0" />
+                      <span>+91 {COMPANY_INFO.gmPhone}</span>
+                    </div>
+                    <span className="font-technical text-[0.55rem] text-[#A8A8A8] bg-white/5 border border-white/10 px-1.5 py-0.5 rounded group-hover/line:border-[#C83A3A] group-hover/line:text-white">
+                      GM
+                    </span>
+                  </a>
+                </div>
               </div>
 
               <div>
@@ -144,13 +164,36 @@ export const Footer: React.FC = () => {
                 </a>
               </div>
 
-              <div className="pt-2 border-t border-white/10">
-                <div className="font-technical text-[0.65rem] text-[#7A7A7A] uppercase tracking-wider mb-1">
-                  HEAD OFFICE
+              <div className="pt-3 border-t border-white/10 space-y-2.5">
+                {/* Head Office (Nashik) */}
+                <div>
+                  <div className="font-technical text-[0.62rem] text-[#C83A3A] font-bold uppercase tracking-wider mb-0.5 flex items-center gap-1">
+                    <Building2 className="w-3 h-3" />
+                    HEAD OFFICE (NASHIK)
+                  </div>
+                  <div className="text-xs text-[#9E9E9E] leading-relaxed">
+                    {COMPANY_INFO.headOffice.complex}, {COMPANY_INFO.headOffice.area}, Nashik — PIN {COMPANY_INFO.headOffice.pin}
+                  </div>
                 </div>
-                <div className="flex items-start gap-2 text-xs text-[#9E9E9E]">
-                  <MapPin className="w-3.5 h-3.5 text-[#C83A3A] shrink-0 mt-0.5" />
-                  <span>{COMPANY_INFO.location} — PIN {COMPANY_INFO.pin}</span>
+
+                {/* Factory Works (Nandurbar) */}
+                <div>
+                  <div className="font-technical text-[0.62rem] text-[#A8A8A8] font-bold uppercase tracking-wider mb-0.5 flex items-center gap-1">
+                    <Factory className="w-3 h-3 text-[#C83A3A]" />
+                    FACTORY WORKS (NANDURBAR)
+                  </div>
+                  <div className="text-xs text-[#9E9E9E] leading-relaxed mb-1">
+                    {COMPANY_INFO.factory.survey}, {COMPANY_INFO.factory.road}, {COMPANY_INFO.factory.district} — PIN {COMPANY_INFO.factory.pin}
+                  </div>
+                  <div className="font-technical text-[0.58rem] text-[#808080] leading-tight">
+                    Mfr. of S.S. &amp; M.S. Pressure Vessels, Heat Exchangers, Storage Tanks, Chimneys, Trusses &amp; Columns, Manholes
+                  </div>
+                </div>
+
+                {/* GSTIN Details */}
+                <div className="font-technical text-[0.68rem] text-white/90 pt-1">
+                  <span className="text-[#7A7A7A]">GSTIN: </span>
+                  <span className="font-bold tracking-wider">{COMPANY_INFO.gst}</span>
                 </div>
               </div>
             </div>
@@ -159,8 +202,12 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-technical text-[#8A8A8A]">
-          <div>
-            © {new Date().getFullYear()} Bhagwat Enterprises. All rights reserved. Registered in Maharashtra, India.
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-center sm:text-left">
+            <span>© {new Date().getFullYear()} Bhagwat Enterprises. All rights reserved.</span>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="text-white/80 font-semibold">GSTIN: {COMPANY_INFO.gst}</span>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span>Registered in Maharashtra, India.</span>
           </div>
           <button
             type="button"

@@ -32,11 +32,32 @@ export const COMPANY_INFO = {
   shortMark: "BE",
   tagline: "ENGINEERING. FABRICATION. EXECUTION.",
   business: "Industrial engineering, fabrication, equipment erection, process plant projects, and turnkey project execution.",
-  location: "Dondaicha, Maharashtra, India",
-  pin: "425408",
+  location: "Nashik & Nandurbar, Maharashtra, India",
+  pin: "422002",
+  headOffice: {
+    title: "Head Office",
+    complex: "Shop No.209, E-Wing Business Plus Complex",
+    area: "Gaikwad Nagar, Mumbai Naka",
+    city: "Nashik",
+    state: "Maharashtra",
+    pin: "422002",
+    fullAddress: "Shop No.209, E-Wing Business Plus Complex, Gaikwad Nagar, Mumbai Naka, Nashik, Maharashtra (422002)",
+  },
+  factory: {
+    title: "Factory & Works",
+    survey: "Survey No. 127/1",
+    road: "Nandurbar Bypass Road, Ghotane",
+    district: "Dist-Nandurbar",
+    state: "Maharashtra",
+    pin: "425412",
+    fullAddress: "Survey No. 127/1, Nandurbar Bypass Road, Ghotane, Dist-Nandurbar, Maharashtra (425412)",
+    manufacturingScope: "Manufacturer Of S.S. And M.S. Pressure Vessels, Heat Exchanger, Storage Tanks, Chimney, Truss And Columns, Manholes",
+  },
   website: "bhagwatenterprises.com",
   contactPerson: "Gopal Bhagwat",
   phone: "09325815600",
+  directorPhone: "9325815600",
+  gmPhone: "9226210600",
   primaryEmail: "gbhagwat1608@gmail.com",
   secondaryEmail: "gbhagwat1408@gmail.com",
   experienceYears: "20+",
@@ -44,7 +65,61 @@ export const COMPANY_INFO = {
   positioning: "Leading fabrication and erection engineering for process plants, starch manufacturing & food industries.",
   description: "Bhagwat Enterprises is a leading fabrication and erection engineering company with over twenty years of industry reputation, delivering quality execution for starch manufacturing, food industries, and turnkey capital projects.",
   disclaimer: "AUTHENTIC PROJECT EXECUTION · BHAGWAT ENTERPRISES",
+  gst: "27AJOPB0073B2ZP",
 };
+
+export interface ManufacturingProduct {
+  id: string;
+  title: string;
+  materials: string;
+  description: string;
+  standard: string;
+}
+
+export const MANUFACTURING_PRODUCTS: ManufacturingProduct[] = [
+  {
+    id: "pressure-vessels",
+    title: "Pressure Vessels",
+    materials: "S.S. & M.S.",
+    description: "Custom engineered process reaction vessels, receivers, and separators fabricated to ASME Section VIII standards.",
+    standard: "ASME Sec VIII",
+  },
+  {
+    id: "heat-exchangers",
+    title: "Heat Exchangers",
+    materials: "S.S. & M.S.",
+    description: "Shell and tube heat exchangers, condensers, and sanitary cooling coils for high thermal efficiency.",
+    standard: "TEMA / Food Grade",
+  },
+  {
+    id: "storage-tanks",
+    title: "Storage Tanks",
+    materials: "S.S. & M.S.",
+    description: "Vertical and horizontal atmospheric or pressurized chemical, liquid sugar, syrup, and bulk storage tanks.",
+    standard: "API 650 / IS 2825",
+  },
+  {
+    id: "chimneys",
+    title: "Industrial Chimneys",
+    materials: "S.S. & M.S.",
+    description: "Self-supporting and guyed industrial exhaust chimneys, flue gas stacks, and ducting systems.",
+    standard: "IS 6533",
+  },
+  {
+    id: "trusses-columns",
+    title: "Trusses & Columns",
+    materials: "Heavy M.S. & S.S.",
+    description: "Structural roof trusses, heavy building columns, crane gantries, and industrial plant support frameworks.",
+    standard: "IS 800 Structural",
+  },
+  {
+    id: "manholes-manifolds",
+    title: "Manholes & Manifolds",
+    materials: "S.S. & M.S.",
+    description: "Heavy-duty inspection manholes, quick-opening covers, sanitary nozzles, and process distribution manifolds.",
+    standard: "DIN / ANSI Standards",
+  },
+];
 
 export const IMAGES: Record<string, CompanyImage> = {
   hero: {
@@ -57,11 +132,11 @@ export const IMAGES: Record<string, CompanyImage> = {
   },
   aboutMain: {
     id: "about-fab",
-    url: "/images/tank-making.jpg",
-    alt: "Industrial storage tank plate fabrication and internal welding in progress",
-    category: "Tank fabrication",
+    url: "/images/tank-making.jpg?v=2",
+    alt: "Stainless steel pressure vessel and heat exchanger fabrication in progress with flanged nozzles and internal coil assembly",
+    category: "Pressure vessel & heat exchanger fabrication",
     source: "company",
-    status: "replaceable",
+    status: "authentic",
   },
   logoDark: {
     id: "logo-dark",
@@ -81,16 +156,16 @@ export const IMAGES: Record<string, CompanyImage> = {
   },
   aboutDetail: {
     id: "about-detail-weld",
-    url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
-    alt: "Precision pipe fitting and structural welding",
-    category: "Welding detail",
-    source: "stock",
-    status: "replaceable",
+    url: "/images/precision-welding.jpg",
+    alt: "Stainless steel pressure vessel nozzle welding and spool fabrication in workshop",
+    category: "Vessel Welding & Manifolds",
+    source: "company",
+    status: "authentic",
   },
   technical: {
     id: "tech-precision",
-    url: "/images/projects/proj_09_chalisgaon.jpeg",
-    alt: "Precision stainless steel process piping manifolds, flanges, and structural pipe rack execution",
+    url: "/images/technical-piping.jpg",
+    alt: "High-integrity stainless steel sanitary process piping network, sterile tanks, and flanged manifolds",
     category: "Precision Engineering",
     source: "company",
     status: "authentic",
@@ -105,8 +180,8 @@ export const IMAGES: Record<string, CompanyImage> = {
   },
   indFood: {
     id: "ind-food",
-    url: "/images/industries/ind_02_food.jpeg",
-    alt: "Sanitary stainless steel food processing lines, jacketed vessels and piping",
+    url: "/images/industries/ind_02_food.jpeg?v=2",
+    alt: "Sanitary stainless steel jacketed reaction vessels, limpet coils, and food processing lines",
     category: "Food Industry",
     source: "company",
     status: "authentic",
@@ -121,8 +196,8 @@ export const IMAGES: Record<string, CompanyImage> = {
   },
   indEquip: {
     id: "ind-equip",
-    url: "/images/industries/ind_04_equipment.jpeg",
-    alt: "Heavy rotary kiln, pressure vessel erection and high-altitude crane rigging",
+    url: "/images/industries/ind_04_equipment.jpeg?v=2",
+    alt: "Heavy overhead crane rigging and vertical stainless steel storage silo erection",
     category: "Heavy Rigging",
     source: "company",
     status: "authentic",
@@ -146,10 +221,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p1",
       url: "/images/projects/proj_01_gokak.jpeg",
-      alt: "Storage silos and process plant execution at Gokak",
-      category: "Storage tanks",
+      alt: "Centrifugal starch extraction and refining machinery line execution at Gokak",
+      category: "Process Machinery",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -161,10 +236,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p2",
       url: "/images/projects/proj_02_pantnagar.jpeg",
-      alt: "Plant structural fabrication and equipment erection at Pantnagar",
-      category: "Fabrication workshop",
+      alt: "Motor pump battery, stainless steel manifolds, and pressure vessel piping execution at Pantnagar",
+      category: "Pumping & Process Manifolds",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -176,10 +251,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p3",
       url: "/images/projects/proj_03_bhuj.jpeg",
-      alt: "Heavy rotary drum calciner installation at Bhuj",
-      category: "Industrial machinery",
+      alt: "Industrial rotary drum vacuum filtration hall, overhead exhaust ducting, and walkways at Bhuj",
+      category: "Filtration & Dewatering Hall",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -191,10 +266,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p4",
       url: "/images/projects/proj_04_chhindwara.jpeg",
-      alt: "Crane erection of conical vessel bottom at Chhindwara",
-      category: "Vessel erection",
+      alt: "Sanitary stainless steel vertical jacketed reaction and mixing vessels at Chhindwara",
+      category: "Jacketed Reaction Vessels",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -206,10 +281,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p5",
       url: "/images/projects/proj_05_malda.jpeg",
-      alt: "Stainless steel U-trough agitator and vessel fabrication at Malda",
-      category: "Chemical equipment",
+      alt: "Sanitary stainless steel processing lines, sterile tanks, and precision pipe manifold installation at Malda",
+      category: "Sanitary Process Lines",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -221,10 +296,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p6",
       url: "/images/projects/proj_06_rajahmundry.jpeg",
-      alt: "Horizontal pressure vessel skid and processing lines at Rajahmundry",
-      category: "Pressure vessels",
+      alt: "Sanitary stainless steel multi-stage hydrocyclone and membrane separation battery skid at Rajahmundry",
+      category: "Sanitary Separation Skid",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {
@@ -311,10 +386,10 @@ export const PROJECTS_LIST: ProjectItem[] = [
     image: {
       id: "p12",
       url: "/images/projects/proj_12_himalayan.jpeg",
-      alt: "Industrial agitated mixing vessels at Chhindwara",
-      category: "Process tanks",
+      alt: "Automated cleanroom food & derivative processing carousel, yellow epoxy flooring, and stainless pipe network at Chhindwara",
+      category: "Cleanroom Processing Line",
       source: "company",
-      status: "replaceable",
+      status: "authentic",
     },
   },
   {

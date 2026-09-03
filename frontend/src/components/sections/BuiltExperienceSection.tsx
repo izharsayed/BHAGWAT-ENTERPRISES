@@ -29,14 +29,14 @@ export const BuiltExperienceSection: React.FC = () => {
           {/* Left Column: Architectural Experience Showcase Card */}
           <div className="lg:col-span-5">
             <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden bg-[#161616] border border-[#2B2B2B] shadow-2xl p-6 sm:p-9 flex flex-col justify-between min-h-[440px] sm:min-h-[500px] group">
-              {/* Authentic Background Site Photo Inset with Subtle Dark Overlay */}
+              {/* Authentic Background Site Photo Inset with Atmospheric Dark Industrial Overlay */}
               <img
-                src="/images/projects/proj_07_shiggaon.jpeg"
-                alt="Bhagwat Enterprises Pan-India Execution"
-                className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700 ease-out"
+                src="/images/experience-card-bg.jpg"
+                alt="Bhagwat Enterprises Industrial Execution Facility"
+                className="absolute inset-0 w-full h-full object-cover opacity-35 group-hover:opacity-45 group-hover:scale-105 transition-all duration-700 ease-out"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E10] via-[#0E0E10]/85 to-[#0E0E10]/50 pointer-events-none" />
 
               {/* Top Header Row */}
               <div className="relative z-10 flex items-center justify-between">
